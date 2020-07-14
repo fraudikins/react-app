@@ -8,7 +8,11 @@ class Welcome extends Component {
     }
 
     render(){
-        return("");
+        return(
+            <div>
+                <h1>Rot and Ruin</h1>
+            </div>
+        );
     }
 
 }

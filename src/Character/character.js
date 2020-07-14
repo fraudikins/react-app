@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import "./character.css";
 
 class Character extends Component {
-    constructor(props){}
+    constructor(props){
+        super(props);
+    }
 
-    render(){}
+    render(){
+        return("");
+    }
 }
 
 export default Character;

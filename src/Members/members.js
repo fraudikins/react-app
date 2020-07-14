@@ -1,10 +1,16 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import "./members.css";
 
 class Members extends Component {
-    constructor(props){}
+    constructor(props){
+        super(props);
+    }
 
-    render(){}
+    render(){
+        return("");
+    }
+
 }
 
 export default Members;

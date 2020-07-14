@@ -8,7 +8,15 @@ class TopBar extends Component {
     }
 
     render(){
-        return("");
+        return(
+            <div>
+                <ul className="topbar">
+                    <li><Link href="home">Home</Link></li>
+                    <li><Link href="characters">Characters</Link></li>
+                    <li><Link href="members">Members</Link></li>
+                </ul>
+            </div>
+        );
     }
 
 }

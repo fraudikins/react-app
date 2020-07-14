@@ -6,10 +6,10 @@ import Character from "./Character/character";
 import Characters from "./Characters/characters";
 import Members from "./Members/members";
 import Profile from "./Profile/profile";
-import Welcome from "./Welcome/welcome"; 
+import Home from "./Home/home"; 
 
 function App() {
-  let exactPath = <Route exact path="/" component={Welcome} />;
+  let exactPath = <Route exact path="/" component={Home} />;
 
   return (
     <div className="App">
@@ -20,7 +20,7 @@ function App() {
           <Route path="/characters" component={Characters}/>
           <Route path="/members" component={Members}/>
           <Route path="/profile" component={Profile}/>
-          <Route path="/welcome" component={Welcome}/>
+          <Route path="/home" component={Home}/>
         </BrowserRouter>
       </header>
     </div>

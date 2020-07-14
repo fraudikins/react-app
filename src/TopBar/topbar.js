@@ -11,9 +11,9 @@ class TopBar extends Component {
         return(
             <div>
                 <ul className="topbar">
-                    <li><Link href="home">Home</Link></li>
-                    <li><Link href="characters">Characters</Link></li>
-                    <li><Link href="members">Members</Link></li>
+                    <li><Link to="home">Home</Link></li>
+                    <li><Link to="characters">Characters</Link></li>
+                    <li><Link to="members">Members</Link></li>
                 </ul>
             </div>
         );

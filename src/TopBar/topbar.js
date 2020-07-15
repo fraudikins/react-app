@@ -13,6 +13,7 @@ class TopBar extends Component {
                 <ul className="topbar">
                     <li><Link to="home">Home</Link></li>
                     <li><Link to="characters">Characters</Link></li>
+                    <li><Link to="locations">Locations</Link></li>
                     <li><Link to="members">Members</Link></li>
                 </ul>
             </div>

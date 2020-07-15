@@ -5,8 +5,9 @@ import './App.css';
 import Character from "./Character/character";
 import Characters from "./Characters/characters";
 import Members from "./Members/members";
-import Profile from "./Profile/profile";
 import Home from "./Home/home"; 
+import Locations from "./Locations/locations";
+import Profile from "./Profile/profile";
 import TopBar from "./TopBar/topbar";
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
             <Route path="/character" component={Character}/>
             <Route path="/characters" component={Characters}/>
             <Route path="/members" component={Members}/>
-            <Route path="/profile" component={Profile}/>
+            <Route path="/locations" component={Locations}/>
             <Route path="/home" component={Home}/>
+            <Route path="/profile" component={Profile}/>
           </BrowserRouter>
         </div>
       </header>

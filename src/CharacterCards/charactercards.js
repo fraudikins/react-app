@@ -20,8 +20,11 @@ class CharacterCard extends Component {
             appId: "1:396015944750:web:cea747a8ef6c9eecab0bbf",
             measurementId: "G-HVKE37VY61"
         };
-        
-        firebase.initializeApp(firebaseConfig);
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
         const firestore = firebase.firestore();
         var docRef = firestore.collection("characters").doc("Rpr6n7S6KRgisV5oTkgt");
         

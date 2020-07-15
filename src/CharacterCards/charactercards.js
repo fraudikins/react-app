@@ -9,37 +9,6 @@ class CharacterCard extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        const firebaseConfig = {
-            apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
-            authDomain: "rot-and-ruin.firebaseapp.com",
-            databaseURL: "https://rot-and-ruin.firebaseio.com",
-            projectId: "rot-and-ruin",
-            storageBucket: "rot-and-ruin.appspot.com",
-            messagingSenderId: "396015944750",
-            appId: "1:396015944750:web:cea747a8ef6c9eecab0bbf",
-            measurementId: "G-HVKE37VY61"
-        };
-
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
-        }
-
-        const firestore = firebase.firestore();
-        var docRef = firestore.collection("characters").doc("Rpr6n7S6KRgisV5oTkgt");
-        
-        docRef.get().then(function(doc) {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-            console.log("Error getting document:", error);
-        });
-    }
-
     render(){
         return(
             <div>

@@ -3,6 +3,9 @@
     width: 80%;
     background-color: #05050d;
     opacity: 0.8;
+}
+
+.location {
     padding-left: 50px;
     padding-right: 50px;
 }

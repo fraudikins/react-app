@@ -1,4 +1,9 @@
 .home-page {
+    display: flex;
     min-height: 100vh;
-    width: 100%;
+    width: 80%;
+    background-color: #05050d;
+    opacity: 0.8;
+    flex-direction: column;
+    align-items: center;
 }

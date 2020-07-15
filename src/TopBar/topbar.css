@@ -1,10 +1,13 @@
+.topbar-component {
+    width: 100%;
+}
+
 .topbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    height: 75px;
     overflow: hidden;
-    background-color: #990706;
+    background-color: #732425;
 }
 
 li {
@@ -16,6 +19,6 @@ li {
 
 a {
     text-decoration: none;
-    color: white;
+    color: #fffbfb;
 }
 

@@ -8,7 +8,11 @@ class Members extends Component {
     }
 
     render(){
-        return("");
+        return(
+            <div className="members-page">
+                <h1>Members</h1>
+            </div>
+        );
     }
 
 }

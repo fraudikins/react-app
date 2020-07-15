@@ -9,7 +9,7 @@ class TopBar extends Component {
 
     render(){
         return(
-            <div>
+            <div className="topbar-component">
                 <ul className="topbar">
                     <li><Link to="home">Home</Link></li>
                     <li><Link to="characters">Characters</Link></li>

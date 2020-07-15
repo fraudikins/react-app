@@ -8,7 +8,11 @@ class Characters extends Component {
     }
 
     render(){
-        return("");
+        return(
+            <div className="characters-page">
+                <h1>Characters</h1>
+            </div>
+        );
     }
     
 }

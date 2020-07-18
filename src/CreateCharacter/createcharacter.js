@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import "./createcharacter.css";
+import "firebase/firestore";
+import firebase from "firebase/app";
 
 class CreateCharacter extends Component {
     constructor(props){
@@ -9,7 +11,7 @@ class CreateCharacter extends Component {
             firstname: "",
             lastname: "",
             age: "",
-            biogrpahy: "",
+            biography: "",
             appearance: "",
             personality: "",
             skills: "",
@@ -18,20 +20,63 @@ class CreateCharacter extends Component {
             dislikes: "",
             family: "",
             friends: "",
+            other: "",
+            imageurl: "",
+        }
+    }
+
+    componentDidMount() {
+        const firebaseConfig = {
+            apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
+            authDomain: "rot-and-ruin.firebaseapp.com",
+            databaseURL: "https://rot-and-ruin.firebaseio.com",
+            projectId: "rot-and-ruin",
+            storageBucket: "rot-and-ruin.appspot.com",
+            messagingSenderId: "396015944750",
+            appId: "1:396015944750:web:cea747a8ef6c9eecab0bbf",
+            measurementId: "G-HVKE37VY61"
+        };
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
         }
     }
 
     //handles username and password input
     inputHandler = (event) => {
-        /*
+        
         let nam = event.target.name;
         let val = event.target.value;
         
-        this.setState(nam, val);*/
+        this.setState({[nam]: val});
     }
 
-    submitHandler() {
+    submitHandler = (event) => {
+        event.preventDefault();
+        const firestore = firebase.firestore();
+        firestore.collection("characters").doc(this.state.firstname + this.state.lastname).set({
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            age: this.state.age,
+            biography: this.state.biography,
+            appearance: this.state.appearance,
+            personality: this.state.personality,
+            skills: this.state.skills,
+            fears: this.state.fears,
+            likes: this.state.likes,
+            dislikes: this.state.dislikes,
+            family: this.state.family,
+            friends: this.state.friends,
+            other: this.state.other,
+            imageurl: this.state.imageurl,
+            inventory: firestore.doc("inventories/" + (this.state.firstname + this.state.lastname)),
+            occupation: "",
+            creator: localStorage.getItem("currentUser"),
+        })
 
+        firestore.collection("inventories").doc(this.state.firstname + this.state.lastname).set({
+            items: "",
+        })
     }
 
     //render
@@ -120,15 +165,17 @@ class CreateCharacter extends Component {
                             <textarea type="text" className="nameinput" name="other" maxlength="5000" rows="8" onChange={this.inputHandler}></textarea>
                         </label>
                     </div>
-                    <div className="character-image">
+                    <div className="image-editor">
                         <label className="inputOO">
                             Profile picture image URL:
                             <br></br>
-                            <input type="text" className="nameinput" name="characterimage" onChange={this.inputHandler}></input>
+                            <input type="text" className="nameinput" name="imageurl" onChange={this.inputHandler}></input>
                         </label>
                     </div>
                     <div className="savecancel">
-                        <button className="buttonsave" type="submit" onClick={this.submitHandler}>Save</button>
+                        <Link to="/character">
+                            <button className="buttonsave" type="submit" onClick={this.submitHandler}>Save</button>
+                        </Link>
                         <Link to="/profile">
                             <button className="buttoncancel" type="reset">Cancel</button>
                         </Link>

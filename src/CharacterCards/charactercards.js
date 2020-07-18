@@ -13,7 +13,15 @@ class CharacterCard extends Component {
         return(
             <div>
                 <div className="character-cards">
-                        <div className="character-card"></div>
+                        <div className="character-card">
+                            <div>
+                                <img className="card-image" src="https://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/a_orig_homeless_marvin_160309__606123.focal-760x428.jpg"></img>
+                            </div>
+                            <p className="card-name">Gustaf Andersson</p>
+                            <p className="card-info">Age: 60</p>
+                            <p className="card-info">Occupation: Unemployed</p>
+                            <p className="card-info">Biography: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        </div>
                         <div className="character-card"></div>
                         <div className="character-card"></div>
                         <div className="character-card"></div>

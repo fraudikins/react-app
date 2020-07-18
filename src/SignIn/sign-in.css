@@ -1,0 +1,82 @@
+.sign-in-page {
+    min-height: 100vh;
+    width: 80%;
+    background-color: rgb(6, 6, 15, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.google-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-p {
+    margin-top: 0;
+}
+
+.input {
+    border-width: 1px;
+    margin-left: 5px;
+    padding-left: 5px;
+    background: none;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: large;
+    color: #fffbfb;
+    border-color: rgb(255, 251, 251, 0.5);
+    width: 218px;
+    
+    
+}
+
+.input-pass {
+    border-width: 1px;
+    margin-left: 12px;
+    padding-left: 5px;
+    background: none;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: large;
+    color: #fffbfb;
+    border-color: rgb(255, 251, 251, 0.5);
+    width: inherit;
+    width: 218px;
+}
+
+.loginBtn {
+    align-self: flex-end;
+    text-align: center;
+    font-size: large;
+    width: 80px;
+    background-color: rgb(255, 251, 251, 0.9);
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    margin-left: 0px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-right: 0px;
+}
+
+.loginBtn:hover{
+    cursor: pointer;
+}
+
+.logins {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: fit-content;
+}
+
+.input-container {
+    display: flex;
+    text-align: start;
+}
+
+.logg {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,64 @@
+.character-page {
+    min-height: 100vh;
+    width: 80%;
+    background-color: rgb(6, 6, 15, 0.8);
+}
+
+.character-page-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.character-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    width: 200px;
+    border-style: solid;
+    border-color: rgba(255, 251, 251, 0.65);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    font-size: small;
+}
+
+.character-info{
+    display: flex;
+    flex-direction: column;
+    width: 614.13px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: large;
+    text-align: left;
+}
+
+.bio-title {
+    margin: 0;
+}
+
+.sidebar-image {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 120px;
+    width: 200px;
+    background-color: #705c3f;
+    opacity: 1.0;
+    object-fit: cover;
+}
+
+.sidebar-element {
+    display: flex;
+    margin: 0;
+    padding: 1px;
+    text-align: left;
+}
+
+.sidebar-container {
+    padding: 5px;
+}

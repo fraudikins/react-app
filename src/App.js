@@ -8,6 +8,7 @@ import Members from "./Members/members";
 import Home from "./Home/home"; 
 import Locations from "./Locations/locations";
 import Profile from "./Profile/profile";
+import SignIn from "./SignIn/sign-in";
 import TopBar from "./TopBar/topbar";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/locations" component={Locations}/>
             <Route path="/home" component={Home}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/sign-in" component={SignIn}/>
           </BrowserRouter>
         </div>
       </header>

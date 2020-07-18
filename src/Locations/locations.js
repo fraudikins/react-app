@@ -12,6 +12,7 @@ class Locations extends Component {
         }
     }
 
+    /*
     componentDidMount() {
         const firebaseConfig = {
             apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
@@ -40,6 +41,7 @@ class Locations extends Component {
             this.setState({locations: locations});
         });
     }
+    */
 
     listLocations() {
         let locations = [];
@@ -56,14 +58,14 @@ class Locations extends Component {
     }
 
     render(){
-        let locations = this.listLocations();
+        //let locations = this.listLocations();
 
         return(
             <div className="locations-page">
                 <h1>Locations</h1>
-                <div>
+                {/*<div>
                     {locations}
-                </div>
+                </div>*/}
             </div>
         );
     }

@@ -1,5 +1,9 @@
 .topbar-component {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #732425;
 }
 
 .topbar {
@@ -7,7 +11,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #732425;
 }
 
 li {
@@ -20,5 +23,41 @@ li {
 a {
     text-decoration: none;
     color: #fffbfb;
+}
+
+li:hover {
+    background-color: #611f20;
+}
+
+.sign-btn {
+    background: none;
+    border: none;
+    height: 100%;
+    text-align: center;
+    color: #fffbfb;
+    font-size: calc(10px + 2vmin);
+    padding: 14px 16px;
+    outline:none;  
+}
+
+.signout-btn {
+    background: none;
+    border: none;
+    height: 57.33px;
+    text-align: center;
+    color: #fffbfb;
+    font-size: calc(10px + 2vmin);
+    padding: 14px 16px;
+    outline:none;  
+}
+
+.signout-btn:hover{
+    background-color: #611f20;
+    cursor: pointer;
+}
+
+.sign-btn:hover{
+    background-color: #611f20;
+    cursor: pointer;
 }
 

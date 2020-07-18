@@ -10,6 +10,7 @@ import Locations from "./Locations/locations";
 import Profile from "./Profile/profile";
 import SignIn from "./SignIn/sign-in";
 import TopBar from "./TopBar/topbar";
+import CreateCharacter from "./CreateCharacter/createcharacter";
 
 function App() {
   let exactPath = <Route exact path="/" component={Home} />;
@@ -23,6 +24,7 @@ function App() {
             {exactPath}
             <Route path="/character" component={Character}/>
             <Route path="/characters" component={Characters}/>
+            <Route path="/createcharacter" component={CreateCharacter}/>
             <Route path="/members" component={Members}/>
             <Route path="/locations" component={Locations}/>
             <Route path="/home" component={Home}/>

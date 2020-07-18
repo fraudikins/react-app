@@ -1,0 +1,27 @@
+.create-character-page {
+    display: flex;
+    min-height: 100vh;
+    width: 80%;
+    background-color: rgb(6, 6, 15, 0.8);
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.nameinput {
+    background: none;
+    border-color: rgb(255, 251, 251, 0.5);
+    border-radius: 5px;
+}
+
+.inputOO {
+    display: flex;
+    text-align: left;
+}
+
+.character-form {
+    width: 60%;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+}

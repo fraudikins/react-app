@@ -79,7 +79,7 @@ class Profile extends Component {
                     <div className="mycharacters">
                         <h2 className="profile-h2">My Characters</h2>
                         <div className="a-edit"> 
-                            <Link to="/home" className="EditButton">+</Link>
+                            <Link to="/createcharacter" className="EditButton">+</Link>
                         </div>
                         
                     </div>

@@ -11,10 +11,10 @@ class Profile extends Component {
         this.state = {
             myCharacters: {},
             myLocations: {},
+            pfp: "",
         }
     }
 
-    /*
     componentDidMount(){
         const firebaseConfig = {
             apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
@@ -36,6 +36,7 @@ class Profile extends Component {
         //let locations = [];
         let currentUser = localStorage.getItem("currentUser");
 
+        /*
         firestore.collection("characters").where("creator", "==", currentUser).get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 characters.push(doc.data());
@@ -43,7 +44,7 @@ class Profile extends Component {
         }).then(() => {
             characters.sort((a, b) => (a.firstname > b.firstname) ? 1 : -1)
             this.setState({characters: characters});
-        });
+        });*/
 
         /*
         firestore.collection("locations").where("creator", "==", currentUser).get().then(function(querySnapshot) {
@@ -54,7 +55,17 @@ class Profile extends Component {
             locations.sort((a, b) => (a.name > b.name) ? 1 : -1)
             this.setState({locations: locations});
         });*/
-    //}
+        
+        /*
+        firestore.collection("users").where("username", "==", currentUser).get().then(function(doc) {
+            doc.data().forEach(function(doc) {
+                characters.push(doc.data());
+            });
+        }).then(() => {
+            characters.sort((a, b) => (a.firstname > b.firstname) ? 1 : -1)
+            this.setState({characters: characters});
+        });*/
+    }
 
     createElements(){
         let elem;
@@ -62,7 +73,7 @@ class Profile extends Component {
             elem = 
                 <div>
                     <div className="divpfp">
-                        <img className="pfp" src="https://images.8tracks.com/cover/i/012/702/198/tumblr_p1wgravKT41ujy76io1_500-4432.jpg" alt="profile-picture"></img>
+                        <img className="pfp" src={localStorage.getItem("currentUserPfp")} alt="profile-picture"></img>
                     </div>
                     <h1 className="profile-name">{localStorage.getItem("currentUser")}</h1>
                     <div className="mycharacters">

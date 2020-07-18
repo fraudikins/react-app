@@ -50,13 +50,10 @@ class SignIn extends Component {
     //handles submission of login form
     submitHandler = (event) => {
         event.preventDefault();
-        console.log('onFormSubmit : ', this); 
         let pass = this.state.password;
         
         const firestore = firebase.firestore();
         var docRef = firestore.collection("users").doc(this.state.username);
-        
-        console.log(docRef.get().username)
 
         docRef.get().then(function(doc) {
             if (doc.exists) {
@@ -64,6 +61,7 @@ class SignIn extends Component {
                 if(pass == doc.data().password){
                     console.log("logged in")
                     localStorage.setItem("currentUser", doc.data().username);
+                    localStorage.setItem("currentUserPfp", doc.data().pfpurl);
                 } else {
                     //failed to log in
                     console.log("log in failed")

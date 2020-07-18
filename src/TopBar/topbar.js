@@ -72,6 +72,7 @@ class TopBar extends Component {
 
     signout() {
         localStorage.removeItem("currentUser");
+        localStorage.removeItem("currentUserPfp");
         window.location.reload();
     }
 

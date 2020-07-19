@@ -12,10 +12,9 @@ class Locations extends Component {
         }
     }
 
-    /*
     componentDidMount() {
         const firebaseConfig = {
-            apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
+            apiKey: process.env.firebaseAPIKey,
             authDomain: "rot-and-ruin.firebaseapp.com",
             databaseURL: "https://rot-and-ruin.firebaseio.com",
             projectId: "rot-and-ruin",
@@ -32,16 +31,15 @@ class Locations extends Component {
         const firestore = firebase.firestore();
         let locations = [];
 
-        firestore.collection("locations").get().then(function(querySnapshot) {
+        firestore.collection("locations").orderBy("name").get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 locations.push(doc.data());
             });
         }).then(() => {
-            locations.sort((a, b) => (a.name > b.name) ? 1 : -1)
             this.setState({locations: locations});
         });
     }
-    */
+    
 
     listLocations() {
         let locations = [];
@@ -58,14 +56,14 @@ class Locations extends Component {
     }
 
     render(){
-        //let locations = this.listLocations();
+        let locations = this.listLocations();
 
         return(
             <div className="locations-page">
                 <h1>Locations</h1>
-                {/*<div>
+                <div>
                     {locations}
-                </div>*/}
+                </div>
             </div>
         );
     }

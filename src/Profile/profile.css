@@ -23,7 +23,7 @@
 
 .divider {
     display: flex;
-    width: 810px;
+    width: 95%;
     border-radius: 1px;
     border-color: rgba(255, 251, 251, 0.8);
     margin-top: 0px;
@@ -59,3 +59,4 @@
     margin-left: 20px;
     padding-top: 8px;
 }
+

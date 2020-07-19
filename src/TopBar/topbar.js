@@ -34,7 +34,7 @@ class TopBar extends Component {
 
     componentDidMount() {
         const firebaseConfig = {
-            apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
+            apiKey: process.env.firebaseAPIKey,
             authDomain: "rot-and-ruin.firebaseapp.com",
             databaseURL: "https://rot-and-ruin.firebaseio.com",
             projectId: "rot-and-ruin",

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import "./profile.css";
-import "../CharacterCards/charactercards.css";
+import "../Characters/characters.css";
 import "firebase/firestore";
 import firebase from "firebase/app";
 
@@ -17,7 +17,7 @@ class Profile extends Component {
 
     componentDidMount(){
         const firebaseConfig = {
-            apiKey: "AIzaSyDzsf-VF7MQbpFg4tO4JAQUEznTzKQHcSw",
+            apiKey: process.env.firebaseAPIKey,
             authDomain: "rot-and-ruin.firebaseapp.com",
             databaseURL: "https://rot-and-ruin.firebaseio.com",
             projectId: "rot-and-ruin",
@@ -34,42 +34,47 @@ class Profile extends Component {
         const firestore = firebase.firestore();
         let characters = [];
         //let locations = [];
-        let currentUser = localStorage.getItem("currentUser");
 
-        /*
-        firestore.collection("characters").where("creator", "==", currentUser).get().then(function(querySnapshot) {
+        firestore.collection("characters").where("creator", "==", localStorage.getItem("currentUser")).get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 characters.push(doc.data());
             });
         }).then(() => {
             characters.sort((a, b) => (a.firstname > b.firstname) ? 1 : -1)
-            this.setState({characters: characters});
-        });*/
+            this.setState({myCharacters: characters});
+        });
+    }
 
-        /*
-        firestore.collection("locations").where("creator", "==", currentUser).get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                locations.push(doc.data());
-            });
-        }).then(() => {
-            locations.sort((a, b) => (a.name > b.name) ? 1 : -1)
-            this.setState({locations: locations});
-        });*/
-        
-        /*
-        firestore.collection("users").where("username", "==", currentUser).get().then(function(doc) {
-            doc.data().forEach(function(doc) {
-                characters.push(doc.data());
-            });
-        }).then(() => {
-            characters.sort((a, b) => (a.firstname > b.firstname) ? 1 : -1)
-            this.setState({characters: characters});
-        });*/
+    // creates a JSX element displaying all the character cards
+    displayMyCharacterCards() {
+        let charactercards = [];
+
+        for(let i = 0; i < this.state.myCharacters.length; i++){
+            let key = this.state.myCharacters[i].firstname + this.state.myCharacters[i].lastname;
+            console.log(key);
+            charactercards.push(
+                <Link className="link" to="/character" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>
+                    <div className="character-card">
+                        <img indexkey={key} className="card-image" src={this.state.myCharacters[i].imageurl}></img>
+                        <div indexkey={key} className="card-info">
+                            <p indexkey={key} className="card-name">{this.state.myCharacters[i].firstname + " " + this.state.myCharacters[i].lastname}</p>
+                            <p indexkey={key} className="pfix">{"Age: " + this.state.myCharacters[i].age}</p>
+                            <p indexkey={key} className="pfix">{"Occupation: " + this.state.myCharacters[i].occupation}</p>
+                            <p indexkey={key} className="pfix">{"Biography: " + this.state.myCharacters[i].biography}</p>
+                        </div>
+                    </div>
+                </Link>
+            )
+        }
+
+        return charactercards;
     }
 
     createElements(){
         let elem;
+
         if(localStorage.getItem("currentUser")){
+            let displaymycharacters = this.displayMyCharacterCards();
             elem = 
                 <div>
                     <div className="divpfp">
@@ -80,20 +85,16 @@ class Profile extends Component {
                         <h2 className="profile-h2">My Characters</h2>
                         <div className="a-edit"> 
                             <Link to="/createcharacter" className="EditButton">+</Link>
-                        </div>
-                        
+                        </div> 
                     </div>
                     <hr className="divider"></hr>
                     <div className="character-cards">
-                        <div className="character-card"></div>
-                        <div className="character-card"></div>
-                        <div className="character-card"></div>
-                        <div className="character-card"></div>
+                        {displaymycharacters}
                     </div>
                     <h2 className="profile-h2">My Locations</h2>
                     <hr className="divider"></hr>
                     <div className="character-cards">
-                        <div className="character-card"></div>
+                    <div className="character-card"></div>
                         <div className="character-card"></div>
                         <div className="character-card"></div>
                         <div className="character-card"></div>

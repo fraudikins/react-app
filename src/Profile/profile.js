@@ -51,7 +51,6 @@ class Profile extends Component {
 
         for(let i = 0; i < this.state.myCharacters.length; i++){
             let key = this.state.myCharacters[i].firstname + this.state.myCharacters[i].lastname;
-            console.log(key);
             charactercards.push(
                 <Link className="link" to="/character" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>
                     <div className="character-card">
@@ -60,7 +59,7 @@ class Profile extends Component {
                             <p indexkey={key} className="card-name">{this.state.myCharacters[i].firstname + " " + this.state.myCharacters[i].lastname}</p>
                             <p indexkey={key} className="pfix">{"Age: " + this.state.myCharacters[i].age}</p>
                             <p indexkey={key} className="pfix">{"Occupation: " + this.state.myCharacters[i].occupation}</p>
-                            <p indexkey={key} className="pfix">{"Biography: " + this.state.myCharacters[i].biography}</p>
+                            <p indexkey={key} className="pfix">{"Backstory: " + this.state.myCharacters[i].backstory}</p>
                         </div>
                     </div>
                 </Link>

@@ -45,16 +45,19 @@ class Characters extends Component {
         let charactercards = [];
 
         for(let i = 0; i < this.state.characters.length; i++){
+            let key = this.state.characters[i].firstname + this.state.characters[i].lastname;
             charactercards.push(
-                <div className="character-card">
-                    <img className="card-image" src={this.state.characters[i].imageurl}></img>
-                    <div className="card-info">
-                        <p className="card-name">{this.state.characters[i].firstname + " " + this.state.characters[i].lastname}</p>
-                        <p className="pfix">{"Age: " + this.state.characters[i].age}</p>
-                        <p className="pfix">{"Occupation: " + this.state.characters[i].occupation}</p>
-                        <p className="pfix">{"Biography: " + this.state.characters[i].biography}</p>
+                <Link className="link" to="/character" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>
+                    <div indexkey={key} className="character-card">
+                        <img indexkey={key} className="card-image" src={this.state.characters[i].imageurl}></img>
+                        <div indexkey={key} className="card-info">
+                            <p indexkey={key} className="card-name">{this.state.characters[i].firstname + " " + this.state.characters[i].lastname}</p>
+                            <p indexkey={key} className="pfix">{"Age: " + this.state.characters[i].age}</p>
+                            <p indexkey={key} className="pfix">{"Occupation: " + this.state.characters[i].occupation}</p>
+                            <p indexkey={key} className="pfix">{"Backstory: " + this.state.characters[i].backstory}</p>
+                        </div>
                     </div>
-                </div>
+                </Link>
             )
         }
 

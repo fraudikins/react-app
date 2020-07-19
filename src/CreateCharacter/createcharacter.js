@@ -11,8 +11,6 @@ class CreateCharacter extends Component {
             firstname: "",
             lastname: "",
             age: "",
-            biography: "",
-            appearance: "",
             personality: "",
             skills: "",
             fears: "",
@@ -27,6 +25,8 @@ class CreateCharacter extends Component {
             creator: "",
             location:"",
             sexuality: "",
+            gender: "",
+            backstory: "",
         }
     }
 
@@ -63,8 +63,6 @@ class CreateCharacter extends Component {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             age: this.state.age,
-            biography: this.state.biography,
-            appearance: this.state.appearance,
             personality: this.state.personality,
             skills: this.state.skills,
             fears: this.state.fears,
@@ -75,10 +73,12 @@ class CreateCharacter extends Component {
             other: this.state.other,
             imageurl: this.state.imageurl,
             inventory: firestore.doc("inventories/" + (this.state.firstname + this.state.lastname)),
-            occupation: "",
+            occupation: this.state.occupation,
             creator: localStorage.getItem("currentUser"),
-            location: "",
+            location: this.state.location,
             sexuality: this.state.sexuality,
+            gender: this.state.gender,
+            backstory: this.state.backstory,
         })
 
         firestore.collection("inventories").doc(this.state.firstname + this.state.lastname).set({
@@ -113,22 +113,63 @@ class CreateCharacter extends Component {
                             <input type="number" className="nameinput" name="age" min="0" max="10000" onChange={this.inputHandler} required></input>
                         </label>
                     </div>
+                    <div className="gender-editor">
+                        <label className="inputOO">
+                            Gender:
+                            <input type="text" className="nameinput" name="gender" maxLength="100" onChange={this.inputHandler} required></input>
+                        </label>
+                    </div>
                     <div className="sexuality-editor">
                         <label className="inputOO">
-                            Sexulaity:
-                            <input type="text" className="nameinput" name="sexuality" maxLength="100" onChange={this.inputHandler}></input>
+                            Sexuality:
+                            <input type="text" className="nameinput" name="sexuality" maxLength="100" onChange={this.inputHandler} required></input>
+                        </label>
+                    </div>
+                    <div className="occupation-editor">
+                        <label className="inputOO">
+                            Occupation:
+                            <input type="text" className="nameinput" name="occupation" maxLength="100" onChange={this.inputHandler} required></input>
+                        </label>
+                    </div>
+                    <div className="location-editor">
+                        <label className="inputOO">
+                            Select location:
+                            <select name="location" className="location-input" onChange={this.inputHandlerSubject}>
+                                <option disabled selected value> -- select an option -- </option>
+                                <option>Hillesden</option>
+                                <option>Kensington</option>
+                                <option>Northfield</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div className="skills-editor">
+                        <label className="inputOO">
+                            Skills:
+                            <textarea type="text" className="nameinput" name="skills" maxlength="2500" rows="4" onChange={this.inputHandler} required></textarea>
+                        </label>
+                    </div>
+                    <div className="fears-editor">
+                        <label className="inputOO">
+                            Fears:
+                            <textarea type="text" className="nameinput" name="fears" maxlength="2500" rows="4" onChange={this.inputHandler} required></textarea>
+                        </label>
+                    </div>
+                    <div className="likes-editor">
+                        <label className="inputOO">
+                            Likes:
+                            <textarea type="text" className="nameinput" name="likes" maxlength="2500" rows="4" onChange={this.inputHandler} required></textarea>
+                        </label>
+                    </div>
+                    <div className="dislikes-editor">
+                        <label className="inputOO">
+                            Dislikes:
+                            <textarea type="text" className="nameinput" name="dislikes" maxlength="2500" rows="4" onChange={this.inputHandler} required></textarea>
                         </label>
                     </div>
                     <div className="biography-editor">
                         <label className="inputOO">
-                            Biography:
-                            <textarea wrap="hard" type="text" className="nameinput" name="biography" maxlength="5000" rows="8"  onChange={this.inputHandler} required></textarea>
-                        </label>
-                    </div>
-                    <div className="appearance-editor">
-                        <label className="inputOO">
-                            Appearance:
-                            <textarea wrap="hard" type="text" className="nameinput" name="appearance" maxlength="5000" rows="8" onChange={this.inputHandler} required></textarea>
+                            Backstory:
+                            <textarea wrap="hard" type="text" className="nameinput" name="backstory" maxlength="5000" rows="8"  onChange={this.inputHandler} required></textarea>
                         </label>
                     </div>
                     <div className="personality-editor">
@@ -137,31 +178,14 @@ class CreateCharacter extends Component {
                             <textarea wrap="hard" type="text" className="nameinput" name="personality" maxlength="5000" rows="8" onChange={this.inputHandler} required></textarea>
                         </label>
                     </div>
-                    <div className="skills-editor">
+                    <div className="image-editor">
                         <label className="inputOO">
-                            Skills:
-                            <textarea type="text" className="nameinput" name="skills" maxlength="2500" rows="8" onChange={this.inputHandler} required></textarea>
+                            FC link:
+                            <br></br>
+                            <input type="text" className="nameinput" name="imageurl" onChange={this.inputHandler} required></input>
                         </label>
                     </div>
-                    <div className="fears-editor">
-                        <label className="inputOO">
-                            Fears:
-                            <textarea type="text" className="nameinput" name="fears" maxlength="2500" rows="8" onChange={this.inputHandler} required></textarea>
-                        </label>
-                    </div>
-                    <div className="likes-editor">
-                        <label className="inputOO">
-                            Likes:
-                            <textarea type="text" className="nameinput" name="likes" maxlength="2500" rows="8" onChange={this.inputHandler} required></textarea>
-                        </label>
-                    </div>
-                    <div className="dislikes-editor">
-                        <label className="inputOO">
-                            Dislikes:
-                            <textarea type="text" className="nameinput" name="dislikes" maxlength="2500" rows="8" onChange={this.inputHandler} required></textarea>
-                        </label>
-                    </div>
-                   
+                    <h2>Optional section</h2>
                     <div className="family-editor">
                         <label className="inputOO">
                             Family:
@@ -178,13 +202,6 @@ class CreateCharacter extends Component {
                         <label className="inputOO">
                             Other:
                             <textarea wrap="hard" type="text" className="nameinput" name="other" maxlength="5000" rows="8" onChange={this.inputHandler}></textarea>
-                        </label>
-                    </div>
-                    <div className="image-editor">
-                        <label className="inputOO">
-                            Profile picture image URL:
-                            <br></br>
-                            <input type="text" className="nameinput" name="imageurl" onChange={this.inputHandler}></input>
                         </label>
                     </div>
                     <div className="savecancel">

@@ -44,10 +44,8 @@ class Character extends Component {
                 <h1>{this.state.character.firstname + " " + this.state.character.lastname}</h1>
                 <div className="character-page-body">
                     <div className="character-info">
-                        <h2 className="bio-title">Biography</h2>
-                        <p>{this.state.character.biography}</p>
-                        <h2 className="bio-title">Appearance</h2>
-                        <p>{this.state.character.appearance}</p>
+                        <h2 className="bio-title">Backstory</h2>
+                        <p>{this.state.character.backstory}</p>
                         <h2 className="bio-title">Personality</h2>
                         <p>{this.state.character.personality}</p>
                         <h2 className="bio-title">Family</h2>
@@ -63,6 +61,8 @@ class Character extends Component {
                             <p className="sidebar-element">{"First Name: "+ this.state.character.firstname}</p>
                             <p className="sidebar-element">{"Last Name: " + this.state.character.lastname}</p>
                             <p className="sidebar-element">{"Age: " + this.state.character.age}</p>
+                            <p className="sidebar-element">{"Gender: " + this.state.character.gender}</p>
+                            <p className="sidebar-element">{"Sexuality: " + this.state.character.sexuality}</p>
                             <p className="sidebar-element">{"Occupation: " + this.state.character.occupation}</p>
                             <p className="sidebar-element">{"Location: " + this.state.character.location}</p>
                             <p className="sidebar-element">{"Skills: " + this.state.character.skills}</p>

@@ -79,4 +79,22 @@
         align-items: center;
         padding-bottom: 20px;
     }
+
+    .character-form{
+        width: 100%;
+    }
+
+    .inputOO{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .location-input{
+        width: auto;
+    }
+
+    .savecancel{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }

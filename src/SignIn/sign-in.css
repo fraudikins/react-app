@@ -6,12 +6,6 @@
     flex-direction: column;
 }
 
-.google-btn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .sign-in-p {
     margin-top: 0;
 }
@@ -26,9 +20,7 @@
     font-size: large;
     color: #fffbfb;
     border-color: rgb(255, 251, 251, 0.5);
-    width: 218px;
-    
-    
+    width: 218px;   
 }
 
 .input-pass {
@@ -94,5 +86,33 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 20px;
+    }
+
+    .logins{
+        width: 100%;
+    }
+
+    .input-container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .input{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .input-pass{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .loginBtn{
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }

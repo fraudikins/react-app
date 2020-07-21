@@ -45,15 +45,15 @@ class Character extends Component {
                 <div className="character-page-body">
                     <div className="character-info">
                         <h2 className="bio-title">Backstory</h2>
-                        <p className=".paragraph-linebreak">{this.state.character.backstory}</p>
+                        <p className="paragraph-linebreak">{this.state.character.backstory}</p>
                         <h2 className="bio-title">Personality</h2>
-                        <p className=".paragraph-linebreak">{this.state.character.personality}</p>
+                        <p className="paragraph-linebreak">{this.state.character.personality}</p>
                         <h2 className="bio-title">Family</h2>
-                        <p className=".paragraph-linebreak">{this.state.character.family}</p>
+                        <p className="paragraph-linebreak">{this.state.character.family}</p>
                         <h2 className="bio-title">Friends</h2>
-                        <p className=".paragraph-linebreak">{this.state.character.friends}</p>
+                        <p className="paragraph-linebreak">{this.state.character.friends}</p>
                         <h2 className="bio-title">Other</h2>
-                        <p className=".paragraph-linebreak">{this.state.character.other}</p>
+                        <p className="paragraph-linebreak">{this.state.character.other}</p>
                     </div>
                     <div className="character-sidebar">
                         <img className="sidebar-image" src={this.state.character.imageurl}></img>

@@ -10,3 +10,25 @@
     padding-right: 150px;
     font-size: large;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .locations-page {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgb(6, 6, 15, 0.8);
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .location {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: large;
+    }
+}

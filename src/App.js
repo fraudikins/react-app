@@ -4,6 +4,7 @@ import './App.css';
 
 import Character from "./Character/character";
 import Characters from "./Characters/characters";
+import Member from "./Member/member";
 import Members from "./Members/members";
 import Home from "./Home/home"; 
 import Locations from "./Locations/locations";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/character" component={Character}/>
             <Route path="/characters" component={Characters}/>
             <Route path="/createcharacter" component={CreateCharacter}/>
+            <Route path="/member" component={Member}/>
             <Route path="/members" component={Members}/>
             <Route path="/locations" component={Locations}/>
             <Route path="/home" component={Home}/>

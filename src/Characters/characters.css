@@ -61,8 +61,8 @@
 
 .card-image {
     width: 175px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
     height: 100px;
     object-fit: cover;
     background-color: rgba(255, 251, 251, 0.2);

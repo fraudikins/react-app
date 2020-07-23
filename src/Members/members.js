@@ -45,13 +45,16 @@ class Members extends Component {
         let members = [];
 
         for(let i = 0; i < this.state.members.length; i++){
+            let key = this.state.members[i].username;
             members.push(
-                <div className="member">
-                    <div className="divpfp">
-                        <img className="pfp" src={this.state.members[i].pfpurl} alt="profile-picture"></img>
+                <Link className="link" to="/member" onClick={e => localStorage.setItem("currentMember", e.target.attributes.getNamedItem('indexkey').value)}>
+                    <div className="member">
+                        <div indexkey={key} className="divpfp">
+                            <img indexkey={key} className="pfp" src={this.state.members[i].pfpurl} alt="profile-picture"></img>
+                        </div>
+                        <h2 indexkey={key} className="username">{this.state.members[i].username}</h2>
                     </div>
-                    <h2 className="username">{this.state.members[i].username}</h2>
-                </div>
+                </Link>
             )
         }
 

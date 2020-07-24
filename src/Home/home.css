@@ -8,6 +8,12 @@
     padding-bottom: 20px;
 }
 
+.passie {
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: large;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
@@ -22,4 +28,13 @@
         align-items: center;
         padding-bottom: 20px;
     }
+
+    .passie {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: large;
+    }
 }
+
+
+

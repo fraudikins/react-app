@@ -12,6 +12,7 @@ import Profile from "./Profile/profile";
 import SignIn from "./SignIn/sign-in";
 import TopBar from "./TopBar/topbar";
 import CreateCharacter from "./CreateCharacter/createcharacter";
+import EditCharacter from "./EditCharacter/editCharacter";
 
 function App() {
   let exactPath = <Route exact path="/" component={Home} />;
@@ -26,6 +27,7 @@ function App() {
             <Route path="/character" component={Character}/>
             <Route path="/characters" component={Characters}/>
             <Route path="/createcharacter" component={CreateCharacter}/>
+            <Route path="/editcharacter" component={EditCharacter}/>
             <Route path="/member" component={Member}/>
             <Route path="/members" component={Members}/>
             <Route path="/locations" component={Locations}/>

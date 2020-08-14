@@ -60,6 +60,25 @@
     padding-top: 8px;
 }
 
+.edit-char {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: 0px;
+    padding-top: 0px;
+    justify-content: center;
+}
+
+.edit-char-btn {
+    display: flex;
+    font-size: 12px;
+    text-align: center;
+}
+
+.character-card {
+    margin-bottom: 4px;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 568px)

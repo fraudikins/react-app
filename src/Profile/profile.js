@@ -52,17 +52,22 @@ class Profile extends Component {
         for(let i = 0; i < this.state.myCharacters.length; i++){
             let key = this.state.myCharacters[i].firstname + this.state.myCharacters[i].lastname;
             charactercards.push(
-                <Link className="link" to="/character" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>
-                    <div className="character-card">
-                        <img indexkey={key} className="card-image" src={this.state.myCharacters[i].imageurl}></img>
-                        <div indexkey={key} className="card-info">
-                            <p indexkey={key} className="card-name">{this.state.myCharacters[i].firstname + " " + this.state.myCharacters[i].lastname}</p>
-                            <p indexkey={key} className="pfix">{"Age: " + this.state.myCharacters[i].age}</p>
-                            <p indexkey={key} className="pfix">{"Occupation: " + this.state.myCharacters[i].occupation}</p>
-                            <p indexkey={key} className="pfix">{"Backstory: " + this.state.myCharacters[i].backstory}</p>
+                <div>
+                    <Link className="link" to="/character" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>
+                        <div className="character-card">
+                            <img indexkey={key} className="card-image" src={this.state.myCharacters[i].imageurl}></img>
+                            <div indexkey={key} className="card-info">
+                                <p indexkey={key} className="card-name">{this.state.myCharacters[i].firstname + " " + this.state.myCharacters[i].lastname}</p>
+                                <p indexkey={key} className="pfix">{"Age: " + this.state.myCharacters[i].age}</p>
+                                <p indexkey={key} className="pfix">{"Occupation: " + this.state.myCharacters[i].occupation}</p>
+                                <p indexkey={key} className="pfix">{"Backstory: " + this.state.myCharacters[i].backstory}</p> 
+                            </div>
                         </div>
+                    </Link>
+                    <div className="edit-char"> 
+                        <Link to="/editcharacter" indexkey={key} className="edit-char-btn" onClick={e => localStorage.setItem("currentCharacter", e.target.attributes.getNamedItem('indexkey').value)}>🖊️</Link>
                     </div>
-                </Link>
+                </div>
             )
         }
 
